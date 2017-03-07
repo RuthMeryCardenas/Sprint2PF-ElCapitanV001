@@ -1,52 +1,21 @@
 //BOTONES
   //Obteniendo los nodos "button" del HTML
-  var bSprint1 = document.getElementById('b1');
-  var bSprint2 = document.getElementById('b2');
-  var bSprint3 = document.getElementById('b3');
-  var lesson1 = document.getElementById('sprint1');
-  var quiz1 = document.getElementById('quiz1');
-  var lesson2 = document.getElementById('sprint2');
-  var quiz2 = document.getElementById('quiz2');
-  var lesson3 = document.getElementById('sprint3');
-  var quiz3 = document.getElementById('quiz3');
-  //Implementando función para calcular resultados del quiz
-  function calculateResults() {
-    alert(1);
+  var bSprint1 = document.getElementById('button1');
+  var bSprint2 = document.getElementById('button2');
+  var bSprint3 = document.getElementById('button3');
+  var dSubmit = document.getElementById('button4');
+  //Obteniendo los nodos "div" del HTML
+  var dSP1Lessons = document.getElementById('SP1lessons');
+  var dSP1Quiz = document.getElementById('SP1quiz');
+  var dSP2Lessons = document.getElementById('SP2lessons');
+  var dSP2Quiz = document.getElementById('SP2quiz');
+  var dSP3Lessons = document.getElementById('SP3lessons');
+  var dSP3Quiz = document.getElementById('SP3quiz');
+  var dResults = document.getElementById('results');
+  //Implementando función que mostrará el menú del dropdown
+  function showMenu() {
+	document.getElementById("myDropdown").classList.toggle("show");
   }
-  function show(mostrarLesson,mostrarQuiz) {
-		    mostrarLesson.style.display = "block";
-        mostrarQuiz.style.display = "block";
-  }
-  function hide(ocultarLesson,ocultarQuiz) {
-		    ocultarLesson.style.display = "none";
-        ocultarQuiz.style.display = "none";
-  }
-  //Implementando las funciones CallBack del evento onclick de cada button
-  bSprint1.onclick = function () {
-    show(lesson1,quiz1);
-    hide(lesson2,quiz2);
-    hide(lesson3,quiz3);
-  }
-  bSprint2.onclick = function () {
-    show(lesson2,quiz2);
-    hide(lesson1,quiz1);
-    hide(lesson3,quiz3);
-  }
-  bSprint3.onclick = function () {
-    show(lesson3,quiz3);
-    hide(lesson1,quiz1);
-    hide(lesson2,quiz2);
-  }
-//CARGA DEL FORMULARIO
-  //Implementando la función CallBack del evento onload
-  window.onload = function () {
-    bSprint2.click();
-  }
-  //Función que muestra el menú del DropDown
-  function showMenuDropDown() {
-  	document.getElementById("myDropdown").classList.toggle("show");
-  }
-
   window.onclick = function(event) {
   	if (!event.target.matches('.dropbtn')) {
   		var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -59,4 +28,30 @@
   		}
   	}
   }
-//document.getElementById("form-signin").reset();
+  //Implementando funcion show --> muestra el Sprint seleccioado
+  function show(toShow) {
+    //Escribe aqui tu codigo
+  }
+  //Implementando funcion hide --> oculta el Sprint no seleccioado
+  function hide(toHide) {
+    //Escribe aqui tu codigo
+  }
+  //Implementando función para calcular los resultados del Quiz
+  dSubmit.onclick = function (){
+    //Escribe aqui tu codigo
+  }
+  //Implementando las funciones CallBack del evento onclick de cada button
+  bSprint1.onclick = function () {
+    //Escribe aqui tu codigo
+  }
+  bSprint2.onclick = function () {
+    //Escribe aqui tu codigo
+  }
+  bSprint3.onclick = function () {
+    //Escribe aqui tu codigo
+  }
+//CARGA DEL FORMULARIO
+  //Implementando la función CallBack del evento onload
+  window.onload = function () {
+    //Escribe aqui tu codigo
+  }
