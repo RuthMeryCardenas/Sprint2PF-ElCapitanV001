@@ -30,28 +30,84 @@
   }
   //Implementando funcion show --> muestra el Sprint seleccioado
   function show(toShow) {
-    //Escribe aqui tu codigo
+    toShow.style.display = "block";
   }
   //Implementando funcion hide --> oculta el Sprint no seleccioado
   function hide(toHide) {
-    //Escribe aqui tu codigo
+    toHide.style.display = "none";
   }
   //Implementando función para calcular los resultados del Quiz
   dSubmit.onclick = function (){
-    //Escribe aqui tu codigo
+    var score = 0;
+    var rQuestionA, rQuestionB, rQuestionC;
+    if (dSP1Quiz.style.display == "block") {
+      rQuestionA = document.getElementsByName('q1');
+      rQuestionB = document.getElementsByName('q2');
+      rQuestionC = document.getElementsByName('q3');
+      hide(dSP1Quiz);
+    }
+    if (dSP2Quiz.style.display == "block") {
+      rQuestionA = document.getElementsByName('q4');
+      rQuestionB = document.getElementsByName('q5');
+      rQuestionC = document.getElementsByName('q6');
+      hide(dSP2Quiz);
+    }
+    for(var i = 0; i < rQuestionA.length; i++){
+        if(rQuestionA[i].checked){
+          score += parseInt(rQuestionA[i].value);
+        }
+        if(rQuestionB[i].checked){
+          score += parseInt(rQuestionB[i].value);
+        }
+        if(rQuestionC[i].checked){
+          score += parseInt(rQuestionC[i].value);
+        }
+      }
+    show(dResults);
+    dResults.innerHTML = "Tienes " + score + " correctas";
+    hide(dSubmit);
   }
   //Implementando las funciones CallBack del evento onclick de cada button
   bSprint1.onclick = function () {
-    //Escribe aqui tu codigo
+    document.getElementById("formQuiz").reset();
+    hide(dResults);
+    hide(dSP2Lessons);
+    hide(dSP2Quiz);
+    hide(dSP3Lessons);
+    hide(dSP3Quiz);
+    show(dSP1Lessons);
+    show(dSP1Quiz);
+    show(dSubmit);
   }
   bSprint2.onclick = function () {
-    //Escribe aqui tu codigo
+    hide(dResults);
+    document.getElementById("formQuiz").reset();
+    hide(dSP1Lessons);
+    hide(dSP1Quiz);
+    hide(dSP3Lessons);
+    hide(dSP3Quiz);
+    show(dSP2Lessons);
+    show(dSP2Quiz);
+    show(dSubmit);
   }
   bSprint3.onclick = function () {
-    //Escribe aqui tu codigo
+    document.getElementById("formQuiz").reset();
+    hide(dResults);
+    hide(dSP2Lessons);
+    hide(dSP2Quiz);
+    hide(dSP1Lessons);
+    hide(dSP1Quiz);
+    hide(dSubmit);
+    show(dSP3Lessons);
+    //show(dSP3Quiz);
   }
 //CARGA DEL FORMULARIO
   //Implementando la función CallBack del evento onload
   window.onload = function () {
-    //Escribe aqui tu codigo
+    // var nameCoder = prompt("Ingresa tu nombre");
+    // if (nameCoder != "" || nameCoder != null ) {
+    //   document.getElementsByClassName('dropdown')[0].innerHTML = "Hola coder " + nameCoder;
+    //   bSprint2.click();
+    // }
+    bSprint2.click();
   }
